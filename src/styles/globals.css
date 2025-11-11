@@ -1,0 +1,24 @@
+@import './reset.css';
+
+:root {
+  /* Fontes (pode ajustar) */
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Cores para o novo Design de Luxo */
+  --color-background: #0d0d0d; /* Fundo principal quase preto */
+  --color-surface: #1a1a1a;    /* Fundo de cards, etc. - bem escuro */
+  --color-primary: #e0ac4c;   /* O dourado/laranja */
+  --color-text: #ffffff;      /* Texto principal branco */
+  --color-text-secondary: #aaaaaa; /* Texto secundário cinza */
+  --color-border: #333333;    /* Cor da borda sutil */
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  /* Adiciona um fundo sutil, se você tiver uma imagem */
+  /* background-image: url('/images/subtle-pattern.png'); */ 
+  /* background-repeat: repeat; */
+  /* background-size: 500px; */
+}

@@ -1,0 +1,342 @@
+/* src/app/veiculo/[slug]/page.module.css */
+
+.pageContent {
+  /* O padding-top deve ser suficiente para o Header */
+  padding-top: 7.5rem; 
+  padding-bottom: 3rem;
+  background-color: var(--color-background); /* Fundo escuro */
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* NOVO: Estilo da Galeria de Largura Total */
+.fullWidthGalleryContainer {
+  width: 100vw; /* Ocupa a largura total da viewport */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw; /* truque para largura total em container centralizado */
+  margin-bottom: 2.5rem; /* Espaço abaixo da galeria */
+}
+
+.fullWidthGallery {
+  display: flex;
+  overflow-x: scroll; /* Permite rolagem horizontal */
+  scroll-snap-type: x mandatory; /* Para rolagem suave de imagem por imagem */
+  -webkit-overflow-scrolling: touch; /* Melhor rolagem em iOS */
+  gap: 1.5rem; /* Espaço entre as imagens */
+  padding: 0 40px; /* Padding nas laterais */
+}
+/* Esconder a barra de rolagem (opcional, mas bom para o visual) */
+.fullWidthGallery::-webkit-scrollbar {
+  display: none;
+}
+.fullWidthGallery {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.galleryImageWrapper {
+  flex-shrink: 0; 
+  width: 45vw; /* Tamanho novo (era 65vw) */
+  height: 40vh; /* Tamanho novo (era 60vh) */
+  position: relative;
+  border-radius: 8px; 
+  overflow: hidden;
+  scroll-snap-align: start; 
+  background-color: var(--color-surface); 
+}
+
+/* Layout Principal do Conteúdo */
+.vehicleLayout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  /* Sem fundo aqui, o fundo da página já é escuro */
+}
+
+.rightColumn {
+  height: fit-content; /* Removido o 'position: sticky' */
+}
+
+/* Título e Subtítulo */
+.titleSection {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  margin-top: 1rem; /* Espaço entre a galeria e o título */
+}
+.titleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.titleHeader h1 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+.heartIcon {
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+}
+.heartIcon path {
+  transition: fill 0.3s ease;
+  stroke: var(--color-primary);
+}
+.heartIcon:hover path {
+  fill: var(--color-primary);
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+/* Grid de Especificações */
+.specGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.specLabel {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+.specValue {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* Link de Diferenças */
+.diffLink {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.diffLink:hover {
+  text-decoration: underline;
+}
+
+/* Seção Videochamada */
+.videoSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-surface);
+  padding: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+}
+.videoIcon {
+  flex-shrink: 0;
+}
+.videoText {
+  flex-grow: 1;
+}
+.videoText h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+.videoText p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+.btnVideo {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border: none;
+  padding: 0.7rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+.btnVideo:hover {
+  opacity: 0.9;
+}
+
+
+/* Descrição */
+.description {
+  padding-top: 1rem;
+}
+.description h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+.description p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* Coluna da Direita: Preço e Formulário */
+.contactFormWrapper {
+  background-color: var(--color-surface);
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+.priceSection {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin: 0;
+}
+.btnParcels {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btnParcels:hover {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+/* Formulário de Contato */
+.contactForm {
+  padding: 1.5rem;
+}
+.contactForm p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.inputGroup {
+  margin-bottom: 1rem;
+}
+.inputGroup input,
+.inputGroup textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+.inputGroup input::placeholder,
+.inputGroup textarea::placeholder {
+  color: #777;
+}
+
+.inputGroup textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.checkboxGroup {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.checkboxGroup input {
+  margin-top: 4px;
+}
+.checkboxGroup label {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.btnSubmit {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.btnSubmit:hover {
+  opacity: 0.9;
+}
+
+/* Posição dos botões de rolagem */
+.scrollButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4px; /* Ajuste visual da seta */
+}
+
+.scrollButton:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.scrollLeft {
+  left: 60px; /* (40px do padding + 20px de espaço) */
+}
+
+.scrollRight {
+  right: 60px; /* (40px do padding + 20px de espaço) */
+}

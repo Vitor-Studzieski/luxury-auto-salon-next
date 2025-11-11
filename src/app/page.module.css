@@ -1,0 +1,113 @@
+/* src/app/page.module.css */
+
+.hero {
+  position: relative; /* Necessário para o conteúdo sobrepor o fundo */
+  height: 90vh; /* Altura da seção (90% da altura da tela) */
+  display: flex;
+  align-items: center;
+  padding-left: 10%; /* Empurra o conteúdo para a direita */
+  overflow: hidden; /* Garante que nada vaze */
+}
+
+/* 1. Estilos do Carrossel de Fundo */
+.carouselBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Fica atrás do conteúdo */
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out; /* Transição suave */
+}
+
+.slide.active {
+  opacity: 1; /* Mostra o slide atual */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.6)
+  ); /* Camada escura */
+  z-index: 2; /* Fica sobre as imagens, mas abaixo do texto */
+}
+
+/* 2. Estilos do Conteúdo */
+.heroContent {
+  position: relative; /* Para ficar na frente do fundo */
+  z-index: 3; /* Fica na frente de tudo */
+  max-width: 600px;
+}
+
+.heroContent h1 {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.heroContent p {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.btnPrimary {
+  font-family: var(--font-body);
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btnPrimary:hover {
+  background-color: #d4bc7a; /* Um tom mais claro da cor primária */
+}
+
+.homeFooter {
+  /* Garante que o rodapé apareça após a seção .hero, 
+    que tem 90vh (90% da altura da tela).
+    Seu layout principal (layout.jsx) não tem footer,
+    então este será o "rodapé" apenas da Home.
+  */
+  background-color: #000; /* Fundo preto para combinar */
+  padding: 3rem 0; /* 3rem de preenchimento em cima e embaixo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerContent {
+  text-align: center;
+}
+
+.footerLogo {
+  font-family: var(--font-heading); /* Usa a fonte de título */
+  font-size: 1.5rem; /* Tamanho da fonte */
+  font-weight: 500;
+  letter-spacing: 0.15rem; /* Espaçamento entre letras (toque de luxo) */
+  color: var(--color-text); /* Cor branca */
+  text-transform: uppercase;
+  opacity: 0.8; /* Leve transparência para elegância */
+}

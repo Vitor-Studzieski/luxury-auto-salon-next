@@ -1,0 +1,124 @@
+/* src/componentes/StockFilterBar/stockFilterBar.module.css */
+.filterContainer {
+  width: 100%;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 2rem;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottomRow label {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.sortSection label,
+.searchSection label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.sortButtons {
+  display: flex;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.sortButtons button {
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sortButtons button:last-child {
+  border-right: none;
+}
+
+.sortButtons button.active,
+.sortButtons button:hover {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.searchInputWrapper {
+  position: relative;
+}
+
+.searchInputWrapper input {
+  width: 300px;
+  padding: 0.6rem 1rem;
+  padding-right: 2.5rem; /* Espaço para a lupa */
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.searchInputWrapper::after {
+  content: '⚲'; /* Símbolo de busca */
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) scale(1.2);
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+.filterDropdowns {
+  display: flex;
+  gap: 1rem;
+}
+
+.filterDropdowns select {
+  min-width: 180px;
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  color: var(--color-text-secondary);
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+
+  /* Remove a seta padrão */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Adiciona fundo com seta personalizada */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23AAAAAA" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 1.2em;
+}
+
+.filterDropdowns select option {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
