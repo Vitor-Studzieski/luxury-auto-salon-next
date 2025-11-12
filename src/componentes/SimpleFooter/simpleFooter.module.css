@@ -1,3 +1,5 @@
+/* src/componentes/SimpleFooter/simpleFooter.module.css */
+
 .footer {
   width: 100%;
   background-color: var(--color-surface);
@@ -5,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
+  /* A linha "margin-top: 3rem;" foi removida daqui */
 }
 .logo {
   font-size: 1.5rem;

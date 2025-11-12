@@ -29,7 +29,6 @@ const Header = () => {
           <Link href="/">Início</Link>
           <Link href="/estoque">Estoque</Link>
           <Link href="/contato">Contato</Link>
-          <Link href="/sobre">Sobre</Link> {/* (vamos criar essa página depois) */}
         </nav>
       </div>
     </header>

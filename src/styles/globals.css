@@ -14,11 +14,19 @@
   --color-border: #333333;    /* Cor da borda sutil */
 }
 
+/* src/styles/globals.css */
+
 body {
-  background-color: #f4f4f4;
-  color: #333;
-  /* Adiciona um fundo sutil, se você tiver uma imagem */
-  /* background-image: url('/images/subtle-pattern.png'); */ 
-  /* background-repeat: repeat; */
-  /* background-size: 500px; */
+  /* 1. CORRIGE O FUNDO PARA A COR ESCURA */
+  background-color: var(--color-background); 
+  
+  /* 2. CORRIGE A COR DO TEXTO GLOBAL PARA CLARO */
+  color: var(--color-text); 
+  
+  /* 3. FIX DEFINITIVO: 
+     Isso força o corpo a ter no mínimo a altura da tela 
+     e empurra o footer (se existir) para o final. */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
