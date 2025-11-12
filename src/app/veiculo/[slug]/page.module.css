@@ -43,8 +43,8 @@
 
 .galleryImageWrapper {
   flex-shrink: 0; 
-  width: 45vw; /* Tamanho novo (era 65vw) */
-  height: 40vh; /* Tamanho novo (era 60vh) */
+  width: 50vw; /* Tamanho novo (era 65vw) */
+  height: 45vh; /* Tamanho novo (era 60vh) */
   position: relative;
   border-radius: 8px; 
   overflow: hidden;

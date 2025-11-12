@@ -4,7 +4,7 @@
 import React, { useRef } from 'react'; // 1. Importa o 'useRef'
 import Image from 'next/image';
 import styles from './page.module.css';
-
+import Link from 'next/link';
 // ... (Componentes HeartIcon e VideoIcon ficam aqui, sem mudança) ...
 const HeartIcon = () => (
   <svg className={styles.heartIcon} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -141,7 +141,12 @@ export default function VehicleClientPage({ car }) {
               {/* ... (todo o formulário) ... */}
               <div className={styles.priceSection}>
                 <p className={styles.price}>{car.price}</p>
-                <button type="button" className={styles.btnParcels}>Ver parcelas</button>
+                <Link 
+                   href={`/financiamento?carro=${car.slug}`} 
+                  className={styles.btnParcels}
+                >
+                  Ver parcelas
+                </Link>
               </div>
               <form className={styles.contactForm}>
                 <p>Envie uma mensagem ao vendedor</p>

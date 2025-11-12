@@ -15,7 +15,6 @@ export const stockData = [
       '/images/cars/porsche-911-gt3-rs-4.png',
       '/images/cars/porsche-911-gt3-rs-5.png',
       '/images/cars/porsche-911-gt3-rs-6.png',
-      
     ],
     year: '2024/2025',
     km: '1.100 KM',
@@ -60,10 +59,19 @@ export const stockData = [
   {
     id: 3,
     brand: 'Porsche',
-    model: 'Cayenne GT',
-    slug: 'porsche-cayenne-gt',
-    price: 'R$ 900.000',
-    imageUrls: ['/images/cars/porsche-cayenne-gt.jpg'], // Atualizado
+    model: 'Cayenne Turbo GT',
+    slug: 'porsche-cayenne-turbo-gt',
+    price: 'R$ 1.400.000',
+    imageUrls: [
+      '/images/cars/porsche-cayenne-turbo-gt-2.png',
+      '/images/cars/porsche-cayenne-turbo-gt-3.png',
+      '/images/cars/porsche-cayenne-turbo-gt-4.png',
+      '/images/cars/porsche-cayenne-turbo-gt-5.png',
+      '/images/cars/porsche-cayenne-turbo-gt-6.png',
+      '/images/cars/porsche-cayenne-turbo-gt-7.png',
+      '/images/cars/porsche-cayenne-turbo-gt-8.png',
+ 
+    ], // Atualizado
     year: '2023/2023',
     km: '7.500 KM',
     isArmored: true,
